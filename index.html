@@ -23,12 +23,12 @@
         <!-- Sidebar start -->
         <aside>
           <div class="step">
-            <div class="step__number" id="one">
+            <div class="step__number active" id="one">
               <span>1</span>
             </div>
             <div class="step__info">
-              <h2>Step 1</h2>
-              <p>Your info</p>
+              <p>Step 1</p>
+              <h2>Your info</h2>
             </div>
           </div>
           <div class="step">
@@ -36,8 +36,8 @@
               <span>2</span>
             </div>
             <div class="step__info">
-              <h2>Step 2</h2>
-              <p>Select plan</p>
+              <p>Step 2</p>
+              <h2>Select plan</h2>
             </div>
           </div>
           <div class="step">
@@ -45,8 +45,8 @@
               <span>3</span>
             </div>
             <div class="step__info">
-              <h2>Step 3</h2>
-              <p>Add-ons</p>
+              <p>Step 3</p>
+              <h2>Add-ons</h2>
             </div>
           </div>
           <div class="step">
@@ -54,8 +54,8 @@
               <span>4</span>
             </div>
             <div class="step__info">
-              <h2>Step 4</h2>
-              <p>Summary</p>
+              <p>Step 4</p>
+              <h2>Summary</h2>
             </div>
           </div>
         </aside>
@@ -68,28 +68,44 @@
             <p>Please provide your name, email address, and phone number.</p>
 
             <div class="form__group">
-              <label for="name">Name</label>
+              <label for="name">
+                <span>Name</span>
+                <span class="error__name"></span>
+              </label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 placeholder="e.g. Stephen King"
-                required
               />
             </div>
 
             <div class="form__group">
-              <label for="email">Email Address</label>
+              <label for="email">
+                <span>Email</span>
+                <span class="error__email"></span>
+              </label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                placeholder="e.g. +1 234 567 890"
+                placeholder="stephenking@lorem.com"
+              />
+            </div>
+            <div class="form__group">
+              <label for="phone">
+                <span>Phone Number</span>
+                <span class="error__phone"></span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="se.g. +1 234 567 890"
               />
             </div>
             <button type="submit">Next Step</button>
           </form>
-
           <!-- Step 1 end -->
 
           <!-- Step 2 start -->
@@ -99,17 +115,27 @@
 
             <div class="plan__options">
               <div class="form__group">
-                <label>
+                <label for="plan1">
                   <img
                     src="assets/images/icon-arcade.svg"
                     alt="arcade icon"
                     aria-hidden="true"
                   />
-                  <input type="radio" name="plan" value="arcade" required />
+                  <input
+                    type="radio"
+                    name="plan"
+                    value="arcade"
+                    required
+                    checked
+                    id="plan1"
+                  />
                   <div>
                     <h3>Arcade</h3>
-                    <p class="gray">$9/mo</p>
-                    <p>2 months free</p>
+                    <p class="gray gray__monthly">$9/mo</p>
+                    <p class="gray gray__yearly">$90/yr</p>
+                    <div class="plan">
+                      <p>2 months free</p>
+                    </div>
                   </div>
                 </label>
               </div>
@@ -124,8 +150,11 @@
                   <input type="radio" name="plan" value="advanced" required />
                   <div>
                     <h3>Advanced</h3>
-                    <p class="gray">$12/mo</p>
-                    <p>2 months free</p>
+                    <p class="gray gray__monthly">$12/mo</p>
+                    <p class="gray gray__yearly">$120/yr</p>
+                    <div class="plan">
+                      <p>2 months free</p>
+                    </div>
                   </div>
                 </label>
               </div>
@@ -140,24 +169,27 @@
                   <input type="radio" name="plan" value="pro" required />
                   <div>
                     <h3>Pro</h3>
-                    <p class="gray">$15/mo</p>
-                    <p>2 months free</p>
+                    <p class="gray gray__monthly">$15/mo</p>
+                    <p class="gray gray__yearly">$150/yr</p>
+                    <div class="plan">
+                      <p>2 months free</p>
+                    </div>
                   </div>
                 </label>
               </div>
             </div>
 
             <div class="billing__options">
-              <p>Monthly</p>
+              <p class="monthly">Monthly</p>
               <label for="switch__toggle" class="switch">
                 <input type="checkbox" id="switch__toggle" />
                 <span class="slider switch__btn"></span>
               </label>
-              <p>Yearly</p>
+              <p class="yearly">Yearly</p>
             </div>
             <div class="button__group">
-              <button type="button">Go Back</button>
-              <button type="submit">Next Step</button>
+              <button id="back__two" type="button">Go Back</button>
+              <button id="next__two" type="submit">Next Step</button>
             </div>
           </form>
           <!-- Step 2 end -->
@@ -169,88 +201,103 @@
 
             <div class="form__group">
               <label>
-                <input
-                  type="checkbox"
-                  name="online-service"
-                  value="online-service"
-                />
-                <div>
-                  <h3>support@loremgaming.com.</h3>
-                  <p>Access to multiplayer games</p>
+                <div class="cont">
+                  <input
+                    type="checkbox"
+                    name="online-service"
+                    value="online-service"
+                    id="addon1"
+                  />
+                  <div>
+                    <h3>Online service</h3>
+                    <p>Access to multiplayer games</p>
+                  </div>
                 </div>
-                <p>+$1/mo</p>
+                <p class="rate rate__month">+$1/mo</p>
+                <p class="rate rate__year">+$10/yr</p>
               </label>
             </div>
 
             <div class="form__group">
               <label>
-                <input
-                  type="checkbox"
-                  name="larger-storage"
-                  value="larger-storage"
-                />
+                <div class="cont">
+                  <input
+                    type="checkbox"
+                    name="larger-storage"
+                    value="larger-storage"
+                    id="addon2"
+                  />
 
-                <div>
-                  <h3>Larger storage</h3>
-                  <p>Extra 1TB of cloud save</p>
+                  <div>
+                    <h3>Larger storage</h3>
+                    <p>Extra 1TB of cloud save</p>
+                  </div>
                 </div>
-
-                <p>+$2/mo</p>
+                <p class="rate rate__month">+$2/mo</p>
+                <p class="rate rate__year">+$20/yr</p>
               </label>
             </div>
 
             <div class="form__group">
               <label>
-                <input
-                  type="checkbox"
-                  name="custom profile"
-                  value="custom-profile"
-                />
-                <div>
-                  <h3>Customizable Profile</h3>
-                  <p>Custom theme on your profile</p>
+                <div class="cont">
+                  <input
+                    type="checkbox"
+                    name="custom profile"
+                    value="custom-profile"
+                    id="addon3"
+                  />
+                  <div>
+                    <h3>Customizable Profile</h3>
+                    <p>Custom theme on your profile</p>
+                  </div>
                 </div>
-                <p>+$2/mo</p>
+                <p class="rate rate__month">+$2/mo</p>
+                <p class="rate rate__year">+$20/yr</p>
               </label>
             </div>
             <div class="button__group">
-              <button type="button">Go Back</button>
+              <button id="back__three" type="button">Go Back</button>
               <button type="submit">Next Step</button>
             </div>
           </form>
           <!-- Step 3 end -->
 
           <!-- Step 4 start -->
-          <section id="step__four" class="hidden">
+          <form id="step__four" class="hidden">
             <h2>Finishing up</h2>
             <p>Double-check everything looks OK before confirming.</p>
 
-            <div class="summary">
+            <div id="summary">
               <!-- Dynamically add subscription and add-on selections here -->
             </div>
 
-            <div class="total"></div>
+            <div id="total"></div>
 
             <div class="button__group">
-              <button type="button">Go Back</button>
+              <button id="back__four" type="button">Go Back</button>
               <button type="submit">Confirm</button>
             </div>
-          </section>
+          </form>
           <!-- Step 4 end -->
 
           <!-- Step 5 start -->
           <section id="step__five" class="hidden">
-            <img
-              src="assets/images/icon-thank-you.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <h2>Thank you!</h2>
-            <p>
-              Thanks for confirming your subscription! We hope you have fun
-              using our platform. If you ever need support, please feel free to
-              email us at support@loremgaming.com.
-            </p>
+            <div class="header">
+              <img
+                src="assets/images/icon-thank-you.svg"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <div class="content">
+              <h2>Thank you!</h2>
+              <p>
+                Thanks for confirming your subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@loremgaming.com.
+              </p>
+            </div>
           </section>
           <!-- Step 5 end -->
         </section>
